@@ -1,0 +1,50 @@
+---
+title: "Проверка пакетов"
+format: html
+execute: 
+  echo: false
+---
+
+
+
+
+```{r}
+
+
+packages <- c(
+  "tidyverse",
+  "broom",
+  "epiR",
+  "Hmisc",
+  "lmtest",
+  "multcomp",
+  "pROC",
+  "rstatix",
+  "sandwich",
+  "TrialSize",
+  "yardstick",
+  "FactoMineR",
+  "factoextra",
+  "ggbiplot",
+  "ggdag",
+  "corrplot",
+  "GGally",
+  "ggExtra",
+  "ggfortify",
+  "ggpubr",
+  "pheatmap",
+  "plotly",
+  "flextable",
+  "openxlsx",
+  "gtsummary",
+  "devtools",
+  "knitr"
+)
+
+result <- data.frame(
+  package = packages,
+  installed = sapply(packages, requireNamespace, quietly = TRUE)
+)
+
+result
+```

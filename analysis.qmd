@@ -1,0 +1,12 @@
+```{r}
+library(tidyverse)
+```
+data <- read_tsv("data/data_tsv.tsv", show_col_types = FALSE)
+data$Группа <- factor(data$Группа)
+data$Пол <- factor(data$Пол)
+data$`Группа крови` <- factor(
+  data$`Группа крови`,
+  levels = c("O (I)", "A (II)", "B (III)", "AB (IV)")
+)
+
+data
